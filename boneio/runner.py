@@ -56,6 +56,8 @@ async def async_run(
 ) -> list[Any]:
     """Run BoneIO."""
 
+    _LOGGER.info("kkkkkkkkk")
+
     _config_helper = ConfigHelper(
         topic_prefix=config[MQTT].pop(TOPIC_PREFIX),
         ha_discovery=config[MQTT][HA_DISCOVERY].pop(ENABLED),
