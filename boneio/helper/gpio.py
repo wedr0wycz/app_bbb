@@ -57,7 +57,7 @@ def setup_input(pin: str, pull_mode: str = "gpio") -> None:
     gpio_mode = gpio_modes.get(pull_mode, GPIO.PUD_OFF)
     _LOGGER.debug("[BONEIO3] setup_input for pin %s: { gpio_mode: %s }", pin, gpio_mode)
     try:
-        GPIO.setup(pin, GPIO.IN, gpio_mode)
+        GPIO.setup(pin, GPIO.IN, pull_up_down=gpio_mode)
     except (ValueError, SystemError) as err:
         raise GPIOInputException(err)
 
