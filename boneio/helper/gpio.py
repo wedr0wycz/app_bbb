@@ -108,6 +108,7 @@ class GpioBaseClass:
     ) -> None:
         """Setup GPIO Input Button"""
         self._pin = pin
+        _LOGGER.debug("[BONEIO3] GpioBaseClass.__init__ kwargs: %s", kwargs)
         gpio_mode = kwargs.get(GPIO_MODE, GPIO_STR)
         self._bounce_time = kwargs.get("bounce_time", TimePeriod(milliseconds=50))
         self._loop = asyncio.get_running_loop()
